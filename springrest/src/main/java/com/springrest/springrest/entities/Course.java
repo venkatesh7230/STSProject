@@ -1,23 +1,30 @@
 package com.springrest.springrest.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Course {
-	private int id;
+	@Id
+	private long id;
 	private String title;
 	private String description;
-	public Course(int id, String title, String description) {
-		super();
-		this.id = id;
-		this.title = title;
-		this.description = description;
-	}
+	private long fee;
 	public Course() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public int getId() {
+	public Course(long id, String title, String description, long fee) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.description = description;
+		this.fee = fee;
+	}
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getTitle() {
@@ -32,13 +39,16 @@ public class Course {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	public long getFee() {
+		return fee;
+	}
+	public void setFee(long fee) {
+		this.fee = fee;
+	}
 	@Override
 	public String toString() {
-		return "Course [id=" + id + ", title=" + title + ", description=" + description + ", getId()=" + getId()
-				+ ", getTitle()=" + getTitle() + ", getDescription()=" + getDescription() + ", getClass()=" + getClass()
-				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+		return "Course [id=" + id + ", title=" + title + ", description=" + description + ", fee=" + fee + "]";
 	}
-	
-	
+		
 
 }
